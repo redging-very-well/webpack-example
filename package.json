@@ -1,0 +1,16 @@
+{
+  "name": "webpack-example",
+  "description": "Demonstration of loading nested remote components.",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "pnpm --filter webpack-example* --parallel start",
+    "build": "pnpm --filter webpack-example* build",
+    "serve": "pnpm --filter webpack-example* --parallel serve",
+    "clean": "pnpm --filter webpack-example* --parallel clean",
+    "e2e:ci": "pnpm start & wait-on http-get://localhost:3001/ && npx cypress run --config-file ../cypress-e2e/config/cypress.config.ts --config '{\"supportFile\": \"../cypress-e2e/support/e2e.ts\"}' --spec \"./e2e/runAll.cy.ts\" --browser=chrome"
+  },
+  "devDependencies": {
+    "wait-on": "7.2.0"
+  }
+}

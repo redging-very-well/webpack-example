@@ -1,0 +1,5 @@
+packages:
+  - "shell"
+  - "microfrontend1"
+  - "microfrontend2"
+  - "microfrontend3"

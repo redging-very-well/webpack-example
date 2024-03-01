@@ -14,6 +14,7 @@ import { Home } from "./Home";
 import { MicroFrontendOnePage } from "./MicroFrontendOnePage";
 import { MicroFrontendTwoPage } from "./MicroFrontendTwoPage";
 import { MicroFrontendThreePage } from "./MicroFrontendThreePage";
+import { MicroFrontendAngularPage } from "./MicroFrontendAngularPage";
 import { Login } from "./Login";
 
 export const AppRoot: FunctionComponent = (): ReactElement => {
@@ -52,16 +53,20 @@ export const AppRoot: FunctionComponent = (): ReactElement => {
               <Route element={<ProtectedRoute />}>
                 <Route index element={<Home />} />
                 <Route
-                  path="microfrontend1/*"
+                  path="mf1/*"
                   element={<MicroFrontendOnePage />}
                 />
                 <Route
-                  path="microfrontend2/*"
+                  path="mf2/*"
                   element={<MicroFrontendTwoPage />}
                 />
                 <Route
-                  path="microfrontend3/*"
+                  path="mf3/*"
                   element={<MicroFrontendThreePage />}
+                />
+                <Route
+                  path="mfangular/*"
+                  element={<MicroFrontendAngularPage />}
                 />
               </Route>
               <Route path="login" element={<Login />} />

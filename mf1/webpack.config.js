@@ -8,7 +8,7 @@ module.exports = {
   mode: "development",
   devServer: {
     historyApiFallback: true,
-    port: 3082,
+    port: 3081,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
@@ -31,11 +31,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "microfrontend2",
+      name: "mf1",
       filename: "remoteEntry.js",
       exposes: {
         // expose each component
-        "./app": "./src/components/AppRoot",
+        "./app": "./src/components/App",
       },
       shared: {
         ...deps,

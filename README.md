@@ -1,3 +1,14 @@
+# Done:
+
+adding module federation to angular 17 project:
+
+1. ensure angular.json has project set to "webpack-example-mfangular" first
+2. npx ng add @angular-architects/native-federation --project webpack-example-mfangular  --port 3084 --type remote
+    (https://www.angulararchitects.io/en/blog/micro-frontends-with-modern-angular-part-1-standalone-and-esbuild/)
+3. After running `npm ci`, running `npm run start` will complain about not having vite, so we need to install that: `npm i vite -D`
+
+
+
 # Webpack Micro-Frontend Demo
 
 A micro-frontend architecture demo in TypeScript using Webpack Module Federation.

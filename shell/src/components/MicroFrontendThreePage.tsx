@@ -2,7 +2,7 @@ import { lazy, Suspense, useState, FunctionComponent } from "react";
 import { Box, Text } from '@chakra-ui/react';
 import "../assets/styles.css";
 
-const MicroFrontendThreeLazy = lazy(() => import("microfrontend3/app"));
+const MicroFrontendThreeLazy = lazy(() => import("mf3/app"));
 
 export const MicroFrontendThreePage: FunctionComponent = (): JSX.Element => {
   const [text, setText] = useState<string>('');

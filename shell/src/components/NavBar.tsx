@@ -25,14 +25,17 @@ export const NavBar: FunctionComponent = (): ReactElement => {
         <Link as={ReactRouterLink} to="/" mr={10}>
           Home
         </Link>
-        <Link as={ReactRouterLink} to="/microfrontend1" mr={10}>
+        <Link as={ReactRouterLink} to="/mf1" mr={10}>
           MF 1 (To-do app)
         </Link>
-        <Link as={ReactRouterLink} to="/microfrontend2" mr={10}>
+        <Link as={ReactRouterLink} to="/mf2" mr={10}>
           MF 2 (Shared router example)
         </Link>
-        <Link as={ReactRouterLink} to="/microfrontend3" mr={10}>
+        <Link as={ReactRouterLink} to="/mf3" mr={10}>
           MF 3 (Shared state example)
+        </Link>
+        <Link as={ReactRouterLink} to="/mfangular" mr={10}>
+          Angular app
         </Link>
         <Link as={ReactRouterLink} to="/abc123" mr={10}>
           404 Example

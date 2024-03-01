@@ -1,12 +1,12 @@
 {
-  "name": "webpack-example-microfrontend2",
+  "name": "webpack-example-mf3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3081",
+    "serve": "serve dist -p 3083",
     "clean": "rm -rf dist"
   },
   "dependencies": {

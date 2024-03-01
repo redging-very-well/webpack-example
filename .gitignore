@@ -68,6 +68,9 @@ typings/
 # angular cache
 .angular
 
+# build output
+dist
+
 # descendant prettier configuration
 /**/*/.prettierrc
 

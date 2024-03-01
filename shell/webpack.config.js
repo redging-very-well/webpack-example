@@ -53,9 +53,10 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "shell",
       remotes: {
-        microfrontend1: "microfrontend1@http://localhost:3081/remoteEntry.js",
-        microfrontend2: "microfrontend2@http://localhost:3082/remoteEntry.js",
-        microfrontend3: "microfrontend3@http://localhost:3083/remoteEntry.js",
+        mf1: "mf1@http://localhost:3081/remoteEntry.js",
+        mf2: "mf2@http://localhost:3082/remoteEntry.js",
+        mf3: "mf3@http://localhost:3083/remoteEntry.js",
+        mfangular: "mfangular@http://localhost:3084/remoteEntry.js",
       },
       shared: {
         ...deps,

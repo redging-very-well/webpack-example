@@ -1,5 +1,6 @@
 packages:
   - "shell"
-  - "microfrontend1"
-  - "microfrontend2"
-  - "microfrontend3"
+  - "mf1"
+  - "mf2"
+  - "mf3"
+  - "mfangular"

@@ -29,9 +29,12 @@ declare module "mf3/app" {
 }
 
 declare module "mfangular/app" {
-  // although this is an angular component, we need to treate it as a react component
-  import { ComponentType } from "react";
-  interface Props {}
-  const MicrofrontendAngular: ComponentType<Props>;
-  export default MicrofrontendAngular;
+  export interface MountOptions {
+    // Define options based on the actual usage
+    // Example:
+    element: HTMLElement;
+    props?: Record<string, any>;
+  }
+
+  export function mount(options?: MountOptions): void;
 }

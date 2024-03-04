@@ -1,8 +1,7 @@
 import { lazy, Suspense, FunctionComponent } from "react";
 import { Box, Text } from '@chakra-ui/react';
 import "../assets/styles.css";
-
-//const MicroFrontendAngularLazy = lazy(() => import("mfangular/app"));
+import AngularAppModule from "../modules/AngularAppModule";
 
 export const MicroFrontendAngularPage: FunctionComponent = (): JSX.Element => {
 
@@ -10,7 +9,7 @@ export const MicroFrontendAngularPage: FunctionComponent = (): JSX.Element => {
     <Box textAlign={'center'}>
       <Box bg={'white'} shadow={'lg'} rounded={'lg'} mx={'300px'} my={5}>
         <Suspense fallback={<Text>Loading...</Text>}>
-          {/* <MicroFrontendAngularLazy /> */}
+          <AngularAppModule/>
         </Suspense>
       </Box>
     </Box>

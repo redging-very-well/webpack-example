@@ -1,9 +1,6 @@
 import { FunctionComponent, ReactElement, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  LocalStorageSessionKeys,
-  useSessionStore,
-} from "../stores/sessionStore";
+import * as sessionStore from "../stores/sessionStore";
 
 import { Flex, Spinner, Text } from "@chakra-ui/react";
 import { NavBar } from "./NavBar";
@@ -18,22 +15,21 @@ import { MicroFrontendAngularPage } from "./MicroFrontendAngularPage";
 import { Login } from "./Login";
 
 export const AppRoot: FunctionComponent = (): ReactElement => {
-  const sessionStore = useSessionStore();
   const [appInitialised, setAppInitialised] = useState<boolean>(false);
 
   function initaliseApp(): void {
-    if (sessionStore.token) {
+    if (sessionStore.getToken()) {
       setAppInitialised(true);
       return;
     }
 
-    if (!localStorage.getItem(LocalStorageSessionKeys.userSessionToken)) {
+    if (!localStorage.getItem(sessionStore.LocalStorageSessionKeys.userSessionToken)) {
       setAppInitialised(true);
       return;
     }
 
     sessionStore.setToken(
-      localStorage.getItem(LocalStorageSessionKeys.userSessionToken) as string
+      localStorage.getItem(sessionStore.LocalStorageSessionKeys.userSessionToken) as string
     );
     setAppInitialised(true);
   }
@@ -46,9 +42,9 @@ export const AppRoot: FunctionComponent = (): ReactElement => {
     <BrowserRouter>
       {appInitialised ? (
         <Flex flexDir={"column"} minHeight={"100vh"} bg={"gray.300"}>
-          {(sessionStore.token ? true : false) && <NavBar />}
+          {(sessionStore.getToken() ? true : false) && <NavBar />}
 
-          <Flex flexDir={"column"} flexGrow={1} p={8}>
+          <Flex flexDir={"column"} flexGrow={1} p={8} data-testid={"home"}>
             <Routes>
               <Route element={<ProtectedRoute />}>
                 <Route index element={<Home />} />

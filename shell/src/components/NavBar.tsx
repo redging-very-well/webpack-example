@@ -6,11 +6,10 @@ import { Box, Flex, Link, Text } from "@chakra-ui/react";
 // So we import Chakra UI's <Link> component, and then import React Router's <Link> component as ReactRouterLink.
 // We can then pass the "as" prop to Chakra UI's <Link> component. See: https://chakra-ui.com/docs/components/link/usage#usage-with-routing-library
 
-import { useSessionStore } from "../stores/sessionStore";
+import * as sessionStore from "../stores/sessionStore";
 
 export const NavBar: FunctionComponent = (): ReactElement => {
   const navigate = useNavigate();
-  const sessionStore = useSessionStore();
   return (
     <Flex
       alignItems={"center"}
@@ -20,6 +19,7 @@ export const NavBar: FunctionComponent = (): ReactElement => {
       px={10}
       py={1}
       fontSize={"sm"}
+      data-testid={"navbar"}
     >
       <Box>
         <Link as={ReactRouterLink} to="/" mr={10}>

@@ -2,16 +2,15 @@ import { FunctionComponent, ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
-import { useSessionStore } from "../../stores/sessionStore";
+import { setToken } from "../../stores/sessionStore";
 
 export const LoginForm: FunctionComponent = (): ReactElement => {
   const navigate = useNavigate();
-  const sessionStore = useSessionStore();
   return (
-    <Box maxWidth={"600px"} minWidth={"350px"}>
+    <Box maxWidth={"600px"} minWidth={"350px"} data-testid={"login"}>
       <Button
         onClick={() => {
-          sessionStore.setToken("super-secret-token");
+          setToken("super-secret-token");
           navigate("/");
         }}
       >
